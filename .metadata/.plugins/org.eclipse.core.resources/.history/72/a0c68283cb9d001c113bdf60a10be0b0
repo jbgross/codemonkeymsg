@@ -23,7 +23,7 @@ import java.util.*;
 
 
 
-public class Login extends JFrame implements ActionListener {
+public class Login extends JFrame {
 
 	public static java.util.ArrayList userList = new java.util.ArrayList();
 	/**
@@ -34,9 +34,9 @@ public class Login extends JFrame implements ActionListener {
 	protected Container contents;
 	public JPanel graphicPanel, contentPanel;
 	public JLabel userName, password;
-	public JTextField userNameField;
+	public TextArea userNameField;
 	protected JPasswordField passWordField;
-	public JButton login, newAccount;
+	public JButton login;
 	public Image monkeys;
 	
 	public Login(){
@@ -44,12 +44,11 @@ public class Login extends JFrame implements ActionListener {
 		super("Welcome to MonkeyMSG!");
 		
 		login = new JButton("Log On");
-		newAccount = new JButton("Create Acccount");
 		
 		userName = new JLabel("User Name:");
 		password = new JLabel("Password:");
 		
-		userNameField = new JTextField();
+		userNameField = new TextArea();
 		passWordField = new JPasswordField();
 		
 		ImageIcon monkeys = new ImageIcon("monkeys.jpg");
