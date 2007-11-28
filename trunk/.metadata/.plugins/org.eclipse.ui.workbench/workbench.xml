@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
-<window height="768" width="1024" x="44" y="58">
+<window height="768" maximized="true" width="1024" x="44" y="58">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.ve.internal.java.codegen.editorpart.XMLViewPart"/>
 </fastViewData>
@@ -13,7 +13,7 @@
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="98" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com_sysdeo_eclipse_tomcat_actionSet" itemType="typeToolBarContribution" x="85" y="22"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="281" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="124" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="98" y="22"/>
 <coolItem id="org.eclipse.jst.ws.consumption" itemType="typeToolBarContribution" x="39" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
@@ -34,19 +34,27 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Runner.java" partName="Runner.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/jYMSG/Runner.java" title="Runner.java" tooltip="jYMSG/Runner.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jYMSG/Runner.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Account.java" partName="Account.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/Account.java" title="Account.java" tooltip="Login/edu/psu/ist/login/Account.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Login/edu/psu/ist/login/Account.java"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/Login.java" title="Login.java" tooltip="Login/edu/psu/ist/login/Login.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Login/edu/psu/ist/login/Login.java"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/User.java" title="User.java" tooltip="Login/edu/psu/ist/login/User.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Login/edu/psu/ist/login/User.java"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
 <view id="org.eclipse.ve.internal.java.codegen.editorpart.XMLViewPart" partName="VE Model: XMI View"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
-<viewState columnWidth0="253" columnWidth1="78" columnWidth2="153" columnWidth3="63" columnWidth4="0" horizontalPosition="0" verticalPosition="0">
+<viewState columnWidth0="256" columnWidth1="81" columnWidth2="156" columnWidth3="66" columnWidth4="0" horizontalPosition="0" verticalPosition="0">
 <columnOrder columnOrderIndex="0"/>
 <columnOrder columnOrderIndex="1"/>
 <columnOrder columnOrderIndex="2"/>
@@ -208,9 +216,27 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/jYMSG/Runner.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/Account.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/Login.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/User.java"/>
 </editors>
-<item active="true" historyLabel="Runner.java" index="0">
+<item historyLabel="Runner.java" index="0">
 <position/>
+</item>
+<item historyLabel="Account.java" index="1">
+<position/>
+</item>
+<item historyLabel="Login.java" index="2">
+<position/>
+</item>
+<item historyLabel="User.java" index="3">
+<position/>
+</item>
+<item historyLabel="Login.java" index="2">
+<position info="not_deleted" x="1030" y="0"/>
+</item>
+<item active="true" historyLabel="Login.java" index="2">
+<position info="not_deleted" x="1059" y="0"/>
 </item>
 </navigationHistory>
 <stickyState/>
@@ -226,11 +252,19 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.intro.impl.presentations.IntroLaunchBar"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" tooltip="Login/edu/psu/ist/login/User.java">
+<persistable path="/Login/edu/psu/ist/login/User.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" tooltip="Login/edu/psu/ist/login/Login.java">
+<persistable path="/Login/edu/psu/ist/login/Login.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Account.java" tooltip="Login/edu/psu/ist/login/Account.java">
+<persistable path="/Login/edu/psu/ist/login/Account.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Runner.java" tooltip="jYMSG/Runner.java">
 <persistable path="/jYMSG/Runner.java"/>
 </file>
