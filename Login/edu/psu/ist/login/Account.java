@@ -1,15 +1,33 @@
+/* Team Code Monkeys, Inc.
+ * Kevin Ahrens, Severn Everett, Nick Weidman
+ * IST 311
+ * 11/15/07
+ */
+
 package edu.psu.ist.login;
+import java.io.*;
 
 public class Account {
-	private static java.util.ArrayList accountCollection = new java.util.ArrayList();
+	private static java.util.ArrayList userNameCollection = new java.util.ArrayList();
+	private static java.util.ArrayList passwordCollection = new java.util.ArrayList();
+	private static java.util.ArrayList idCollection = new java.util.ArrayList();
+	private static int total = 0;
 	private int idNumber;
 	private String userName;
 	private String password;
 	
-	public Account(int idNumber, String userName, String password) {
-		this.idNumber = idNumber;
+	
+	public Account(String userName, String password) throws IOException {
+		Account.total = Account.getCount();
+		this.idNumber = ++Account.total;
 		this.userName = userName;
 		this.password = password;
+		DataOutputStream out = new DataOutputStream(new FileOutputStream("Accounts.dat", true));
+		DataOutputStream count = new DataOutputStream(new FileOutputStream("Count.dat", false));
+		out.writeInt(this.idNumber);
+		out.writeUTF(this.userName);
+		out.writeUTF(this.password);
+		count.writeInt(Account.total);
 	}
 	/**
 	 * This function creates a temporary Account object in order
@@ -19,23 +37,52 @@ public class Account {
 	 * @return int userID or negative (indicating failure)
 	 */
 	public static int verifyLogIn (String userName, String password){
-		for (int i = 0; i < accountCollection.size(); i++) {
-			Account accountHolder = (Account) accountCollection.get(i);
-			if ((userName.equals(accountHolder.userName)) && (password.equals(accountHolder.password))) {
+		for (int i = 0; i < idCollection.size(); i++) {
+			String nameHolder = (String) userNameCollection.get(i);
+			//System.out.println(nameHolder);
+			String passHolder = (String) passwordCollection.get(i);
+			//System.out.println(passHolder);
+			if ((userName.equals(nameHolder)) && (password.equals(passHolder))) {
 				return i;
 			}
-			accountHolder = null;
+			nameHolder = null;
+			passHolder = null;
 		}
 		return -1;
 	}
 
 	public static String[] getInfo (int i) {
-		Account accountHolder = (Account) accountCollection.get(i);
-		String[] info = {accountHolder.userName, Integer.toString(accountHolder.idNumber)};
+		String nameHolder = (String) userNameCollection.get(i);
+		Integer idHolder = (Integer) idCollection.get(i);
+		String[] info = {nameHolder, idHolder.toString()};
+		nameHolder = null;
+		idHolder = null;
 		return info;
 	}
 	
-	public static void addAccount(Account account) {
-		accountCollection.add(account);
+	/**
+	 * This function adds to the holder arraylists for
+	 * each account variable for the running program.
+	 * @param id
+	 * @param userName
+	 * @param password
+	 */
+	public static void addAccount(int id, String userName, String password) {
+		idCollection.add(new Integer(id));
+		userNameCollection.add(userName);
+		passwordCollection.add(password);
+	}
+	
+	/**
+	 * This function returns the current count of all accounts stored
+	 * in the account data file.
+	 * @return int count
+	 * @throws IOException
+	 */
+	private static int getCount() throws IOException {
+		DataInputStream countInput =
+			new DataInputStream(new FileInputStream("Count.dat"));
+		int count = countInput.readInt();
+		return count;
 	}
 }
