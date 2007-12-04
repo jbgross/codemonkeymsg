@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
 
 public class User {
 	String name;
-	String id; //wtf?
+	String id;
+	boolean yes = true;
 	
 	public User (String[] info) {
 		this.name = info[0];

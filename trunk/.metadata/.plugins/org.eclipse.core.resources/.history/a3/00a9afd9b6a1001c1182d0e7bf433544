@@ -44,6 +44,7 @@ public class Login extends JFrame implements ActionListener {
 		super("MonkeyMessenger v1.0");
 		contents = getContentPane();
 		contents.setBounds(300,600, 100,900);
+		contents.setVisible(true);
 		
 		loginButton = new JButton("Log On");
 		newAccountButton = new JButton("Create Acccount");
@@ -84,7 +85,7 @@ public class Login extends JFrame implements ActionListener {
 		password.setLocation(20, 25);
 		passWordField.setLocation(50,25);
 		
-		this.setVisible(true);
+		
 	}
 	
 	public void actionPerformed(ActionEvent evt){
@@ -119,11 +120,6 @@ public class Login extends JFrame implements ActionListener {
 //			e.printStackTrace();
 //		}
 		Login gui1 = new Login();
-//		gui1.setTitle("QQ");
-//		gui1.setLocationRelativeTo(null);
-//		gui1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		gui1.setSize(300,00);
-//		gui1.setVisible(true);
 	}
 	
 	public static void generateAccountCollection () throws IOException {
@@ -199,7 +195,7 @@ public class Login extends JFrame implements ActionListener {
 				//		"Enter User Name",
 				//		"Login",
 				//		JOptionPane.QUESTION_MESSAGE);
-			password = new String(passWordField.getPassword());
+			password = passWordField.getPassword();
 				//JOptionPane.showInputDialog(null,
 				//		"Enter Password",
 				//		"Password",
