@@ -95,7 +95,7 @@ public class Login extends JFrame implements ActionListener {
 	
 	public void actionPerformed(ActionEvent evt){
 		if (evt.getSource() == loginButton){
-			verifyUser(userNameField.getText(), new String(passWordField.getPassword()));
+			verifyUser();
 		}
 		if (evt.getSource() == newAccountButton){
 			try {
@@ -148,12 +148,15 @@ public class Login extends JFrame implements ActionListener {
 			Account.addAccount(idNumber, userName, password);
 		}
 	}
-	public int verifyUser (String userName, String passWord) {
+	public int verifyUser () {
 		boolean loggedIn = false;
 		int userId = -1;
 		for (int i = 0; i < 5; i++) {
-
-			userId = Account.verifyLogIn(userName, passWord);
+			String userName = 
+				userNameField.getText();
+			String password = 
+				new String(passWordField.getPassword());
+			userId = Account.verifyLogIn(userName, password);
 			if (userId >= 0) {
 				JOptionPane.showMessageDialog(null, "Correct Login!");
 				loggedIn = true;
