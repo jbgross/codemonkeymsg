@@ -68,11 +68,15 @@ public class Login extends JFrame implements ActionListener {
 		contentPanel.add(password);
 		contentPanel.add(passWordField);
 		
-		//monkeys.getScaledInstance(300,300);
+		userNameField.addActionListener(this);
+		passWordField.addActionListener(this);
+		
+		loginButton.addActionListener(this);
+		newAccountButton.addActionListener(this);
 		
 		graphicPanel.add(new JLabel(monkeys));
 		
-		contentPanel.setLayout(new FlowLayout());
+		contentPanel.setLayout(null);
 		userName.setLocation(20, 10);
 		userNameField.setLocation(50,10);
 		password.setLocation(20, 25);
@@ -80,22 +84,16 @@ public class Login extends JFrame implements ActionListener {
 		
 		contentPane.setLayout(new FlowLayout());
 		
-		contentPane.add(graphicPanel);
+		//contentPane.add(graphicPanel);
 		contentPane.add(contentPanel);
 		
-		userNameField.addActionListener(this);
-		passWordField.addActionListener(this);
-		
-		loginButton.addActionListener(this);
-		newAccountButton.addActionListener(this);
-		
-		this.setBounds(0,0,300,700);
+		this.setLocation(300,100);
 		this.setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent evt){
 		if (evt.getSource() == loginButton){
-			verifyUser(userNameField.getText(), new String(passWordField.getPassword()));
+			verifyUser();
 		}
 		if (evt.getSource() == newAccountButton){
 			try {
@@ -148,12 +146,21 @@ public class Login extends JFrame implements ActionListener {
 			Account.addAccount(idNumber, userName, password);
 		}
 	}
-	public int verifyUser (String userName, String passWord) {
+	public static int verifyUser () {
 		boolean loggedIn = false;
 		int userId = -1;
 		for (int i = 0; i < 5; i++) {
-
-			userId = Account.verifyLogIn(userName, passWord);
+			String userName = 
+				JOptionPane.showInputDialog(null,
+						"Enter User Name",
+						"Login",
+						JOptionPane.QUESTION_MESSAGE);
+			String password = 
+				JOptionPane.showInputDialog(null,
+						"Enter Password",
+						"Password",
+						JOptionPane.QUESTION_MESSAGE);
+			userId = Account.verifyLogIn(userName, password);
 			if (userId >= 0) {
 				JOptionPane.showMessageDialog(null, "Correct Login!");
 				loggedIn = true;

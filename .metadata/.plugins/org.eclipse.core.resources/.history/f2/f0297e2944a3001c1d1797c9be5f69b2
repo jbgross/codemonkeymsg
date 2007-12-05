@@ -31,7 +31,7 @@ public class Login extends JFrame implements ActionListener {
 	 * @throws FileNotFoundException 
 	 */
 	
-	private Container contentPane;
+	private Container contents;
 	public JPanel graphicPanel, contentPanel;
 	public JLabel userName, password;
 	public JTextField userNameField;
@@ -42,8 +42,8 @@ public class Login extends JFrame implements ActionListener {
 	public Login(){
 
 		super("MonkeyMessenger v1.0");
-
-		contentPane = getContentPane();
+		contents = getContentPane();
+		contents.setBounds(300,600, 100,900);
 		
 		loginButton = new JButton("Log On");
 		newAccountButton = new JButton("Create Acccount");
@@ -61,6 +61,8 @@ public class Login extends JFrame implements ActionListener {
 		graphicPanel = new JPanel();
 		contentPanel = new JPanel();
 		
+		contents.setLayout(new FlowLayout());
+		
 		contentPanel.add(loginButton);
 		contentPanel.add(newAccountButton);
 		contentPanel.add(userName);
@@ -68,34 +70,26 @@ public class Login extends JFrame implements ActionListener {
 		contentPanel.add(password);
 		contentPanel.add(passWordField);
 		
-		//monkeys.getScaledInstance(300,300);
-		
-		graphicPanel.add(new JLabel(monkeys));
-		
-		contentPanel.setLayout(new FlowLayout());
-		userName.setLocation(20, 10);
-		userNameField.setLocation(50,10);
-		password.setLocation(20, 25);
-		passWordField.setLocation(50,25);
-		
-		contentPane.setLayout(new FlowLayout());
-		
-		contentPane.add(graphicPanel);
-		contentPane.add(contentPanel);
-		
 		userNameField.addActionListener(this);
 		passWordField.addActionListener(this);
 		
 		loginButton.addActionListener(this);
 		newAccountButton.addActionListener(this);
 		
-		this.setBounds(0,0,300,700);
+		graphicPanel.add(new JLabel(monkeys));
+		
+		contentPanel.setLayout(null);
+		userName.setLocation(20, 10);
+		userNameField.setLocation(50,10);
+		password.setLocation(20, 25);
+		passWordField.setLocation(50,25);
+		
 		this.setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent evt){
 		if (evt.getSource() == loginButton){
-			verifyUser(userNameField.getText(), new String(passWordField.getPassword()));
+			verifyUser();
 		}
 		if (evt.getSource() == newAccountButton){
 			try {
@@ -148,12 +142,21 @@ public class Login extends JFrame implements ActionListener {
 			Account.addAccount(idNumber, userName, password);
 		}
 	}
-	public int verifyUser (String userName, String passWord) {
+	public static int verifyUser () {
 		boolean loggedIn = false;
 		int userId = -1;
 		for (int i = 0; i < 5; i++) {
-
-			userId = Account.verifyLogIn(userName, passWord);
+			String userName = 
+				JOptionPane.showInputDialog(null,
+						"Enter User Name",
+						"Login",
+						JOptionPane.QUESTION_MESSAGE);
+			String password = 
+				JOptionPane.showInputDialog(null,
+						"Enter Password",
+						"Password",
+						JOptionPane.QUESTION_MESSAGE);
+			userId = Account.verifyLogIn(userName, password);
 			if (userId >= 0) {
 				JOptionPane.showMessageDialog(null, "Correct Login!");
 				loggedIn = true;
