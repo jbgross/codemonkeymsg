@@ -6,11 +6,12 @@
 
 package edu.psu.ist.login;
 import java.io.*;
+import java.util.*;
 
 public class Account {
-	private static java.util.ArrayList userNameCollection = new java.util.ArrayList();
-	private static java.util.ArrayList passwordCollection = new java.util.ArrayList();
-	private static java.util.ArrayList idCollection = new java.util.ArrayList();
+	private static ArrayList userNameCollection = new ArrayList();
+	private static  ArrayList passwordCollection = new ArrayList();
+	private static  ArrayList idCollection = new ArrayList();
 	private static int total = 0;
 	private int idNumber;
 	private String userName;
@@ -37,11 +38,10 @@ public class Account {
 	 * @return int userID or negative (indicating failure)
 	 */
 	public static int verifyLogIn (String userName, String password){
+		//System.out.println(idCollection.size());
 		for (int i = 0; i < idCollection.size(); i++) {
 			String nameHolder = (String) userNameCollection.get(i);
-			//System.out.println(nameHolder);
 			String passHolder = (String) passwordCollection.get(i);
-			//System.out.println(passHolder);
 			if ((userName.equals(nameHolder)) && (password.equals(passHolder))) {
 				return i;
 			}
@@ -68,6 +68,7 @@ public class Account {
 	 * @param password
 	 */
 	public static void addAccount(int id, String userName, String password) {
+		//System.out.println(id);
 		idCollection.add(new Integer(id));
 		userNameCollection.add(userName);
 		passwordCollection.add(password);

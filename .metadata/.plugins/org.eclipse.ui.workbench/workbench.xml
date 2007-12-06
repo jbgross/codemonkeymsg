@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="44" y="58">
 <fastViewData fastViewLocation="1024">
@@ -44,7 +44,7 @@
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Account.java" partName="Account.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/Account.java" title="Account.java" tooltip="Login/edu/psu/ist/login/Account.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Login/edu/psu/ist/login/Account.java"/>
 </editor>
-<editor focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/Login.java" title="Login.java" tooltip="Login/edu/psu/ist/login/Login.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/Login.java" title="Login.java" tooltip="Login/edu/psu/ist/login/Login.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Login/edu/psu/ist/login/Login.java"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="//3c.ist.local/users/njw133/IST 311/SVN Repo/Login/edu/psu/ist/login/User.java" title="User.java" tooltip="Login/edu/psu/ist/login/User.java" workbook="DefaultEditorWorkbook">
@@ -55,7 +55,7 @@
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
 <view id="org.eclipse.ve.internal.java.codegen.editorpart.XMLViewPart" partName="VE Model: XMI View"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
-<viewState columnWidth0="549" columnWidth1="87" columnWidth2="162" columnWidth3="72" columnWidth4="0" horizontalPosition="0" verticalPosition="0">
+<viewState columnWidth0="555" columnWidth1="93" columnWidth2="168" columnWidth3="78" columnWidth4="0" horizontalPosition="0" verticalPosition="0">
 <columnOrder columnOrderIndex="0"/>
 <columnOrder columnOrderIndex="1"/>
 <columnOrder columnOrderIndex="2"/>
@@ -103,7 +103,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -189,8 +189,8 @@
 </folder>
 </info>
 <info part="org.eclipse.gef.ui.palette_view" ratio="0.24950299" ratioLeft="251" ratioRight="755" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.8662921" ratioLeft="771" ratioRight="119" relationship="4" relative="org.eclipse.gef.ui.palette_view">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<info folder="true" part="bottom" ratio="0.8258427" ratioLeft="735" ratioRight="155" relationship="4" relative="org.eclipse.gef.ui.palette_view">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -226,161 +226,162 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/Login.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/LoginGUI.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/User.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/Account.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/Account.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Login/edu/psu/ist/login/User.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Login/Count.dat"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Login/Accounts.txt"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Login/Accounts.dat"/>
 </editors>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2314" y="0"/>
+<position info="not_deleted" x="4201" y="0"/>
+</item>
+<item historyLabel="LoginGUI.java" index="1">
+<position info="not_deleted" x="499" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2236" y="32"/>
+<position info="not_deleted" x="4201" y="0"/>
+</item>
+<item historyLabel="LoginGUI.java" index="1">
+<position info="not_deleted" x="313" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2509" y="0"/>
+<position info="not_deleted" x="4201" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2509" y="0"/>
+<position info="not_deleted" x="5747" y="20"/>
+</item>
+<item historyLabel="User.java" index="2">
+<position/>
+</item>
+<item historyLabel="LoginGUI.java" index="1">
+<position info="not_deleted" x="2028" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2236" y="32"/>
+<position info="not_deleted" x="976" y="0"/>
+</item>
+<item historyLabel="LoginGUI.java" index="1">
+<position info="not_deleted" x="2028" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2509" y="0"/>
+<position info="not_deleted" x="976" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="2551" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="2580" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="2711" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="2709" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="3462" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="3496" y="0"/>
 </item>
 <item historyLabel="Login.java" index="0">
 <position/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2509" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2503" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="User.java" index="1">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="Account.java" index="2">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="User.java" index="1">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4711" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4758" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4685" y="4"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4665" y="4"/>
-</item>
-<item historyLabel="User.java" index="1">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4665" y="4"/>
-</item>
-<item historyLabel="User.java" index="1">
-<position info="not_deleted" x="290" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4665" y="4"/>
-</item>
-<item historyLabel="User.java" index="1">
-<position info="not_deleted" x="290" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4665" y="4"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="5173" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="5329" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="3100" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position/>
+<position info="not_deleted" x="4864" y="0"/>
 </item>
 <item historyLabel="Account.java" index="3">
 <position/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position/>
+<position info="not_deleted" x="4864" y="10"/>
 </item>
-<item historyLabel="User.java" index="4">
-<position/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="1528" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="3241" y="24"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2070" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2104" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="1843" y="0"/>
-</item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4302" y="0"/>
-</item>
-<item historyLabel="Accounts.dat" index="5">
+<item historyLabel="Account.java" index="3">
 <position/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4302" y="0"/>
+<position info="not_deleted" x="4864" y="10"/>
 </item>
-<item historyLabel="Accounts.dat" index="5">
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="925" y="0"/>
+</item>
+<item historyLabel="Count.dat" index="4">
+<position/>
+</item>
+<item historyLabel="Accounts.txt" index="5">
+<position/>
+</item>
+<item historyLabel="Accounts.dat" index="6">
+<position/>
+</item>
+<item historyLabel="Accounts.txt" index="5">
+<position/>
+</item>
+<item historyLabel="Count.dat" index="4">
 <position/>
 </item>
 <item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4302" y="0"/>
+<position info="not_deleted" x="4605" y="0"/>
 </item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="2478" y="0"/>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="1029" y="0"/>
 </item>
-<item historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4192" y="0"/>
-</item>
-<item historyLabel="Accounts.dat" index="5">
+<item historyLabel="Account.java" index="3">
 <position/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="991" y="0"/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="1984" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="4605" y="0"/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="4605" y="0"/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="4193" y="0"/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="2754" y="0"/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="3123" y="0"/>
+</item>
+<item historyLabel="User.java" index="2">
+<position/>
+</item>
+<item historyLabel="Login.java" index="0">
+<position/>
+</item>
+<item historyLabel="User.java" index="2">
+<position/>
+</item>
+<item historyLabel="Account.java" index="3">
+<position info="not_deleted" x="390" y="0"/>
 </item>
 <item active="true" historyLabel="Login.java" index="0">
-<position info="not_deleted" x="4192" y="0"/>
+<position/>
 </item>
 </navigationHistory>
 <stickyState/>
@@ -402,6 +403,15 @@
 <mruList>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Accounts.dat" tooltip="Login/Accounts.dat">
 <persistable path="/Login/Accounts.dat"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Accounts.txt" tooltip="Login/Accounts.txt">
+<persistable path="/Login/Accounts.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Count.dat" tooltip="Login/Count.dat">
+<persistable path="/Login/Count.dat"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginGUI.java" tooltip="Login/edu/psu/ist/login/LoginGUI.java">
+<persistable path="/Login/edu/psu/ist/login/LoginGUI.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="monkeys.jpg" tooltip="Login/monkeys.jpg">
 <persistable path="/Login/monkeys.jpg"/>

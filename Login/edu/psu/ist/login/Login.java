@@ -5,9 +5,7 @@ import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.JPanel.*;
-import java.lang.*;
-import java.util.*;
+
 
 
 
@@ -32,11 +30,11 @@ public class Login extends JFrame implements ActionListener {
 	 */
 	
 	private Container contentPane;
-	public JPanel graphicPanel, contentPanel;
+	public static JPanel graphicPanel, userNamePanel, passWordPanel, buttonPanel, imPanel;
 	public JLabel userName, password;
 	public JTextField userNameField;
 	protected JPasswordField passWordField;
-	public JButton loginButton, newAccountButton;
+	public JButton loginButton, newAccountButton, logoutButton;
 	public Image monkeys;
 	
 	public Login(){
@@ -51,37 +49,36 @@ public class Login extends JFrame implements ActionListener {
 		userName = new JLabel("User Name:");
 		password = new JLabel("Password:");
 		
-		userNameField = new JTextField(30);
-		passWordField = new JPasswordField(30);
+		userNameField = new JTextField(15);
+		passWordField = new JPasswordField(15);
 		
 		ImageIcon monkeys = new ImageIcon("monkeys.jpg");
 		//File image = new File("monkeys.jpg");
 		//monkeys = ImageIO.read(image);
 		
 		graphicPanel = new JPanel();
-		contentPanel = new JPanel();
+		userNamePanel = new JPanel();
+		passWordPanel = new JPanel();
+		buttonPanel = new JPanel();
 		
-		contentPanel.add(loginButton);
-		contentPanel.add(newAccountButton);
-		contentPanel.add(userName);
-		contentPanel.add(userNameField);
-		contentPanel.add(password);
-		contentPanel.add(passWordField);
+		userNamePanel.add(userName);
+		userNamePanel.add(userNameField);
+		passWordPanel.add(password);
+		passWordPanel.add(passWordField);
+		buttonPanel.add(loginButton);
+		buttonPanel.add(newAccountButton);
 		
 		//monkeys.getScaledInstance(300,300);
 		
 		graphicPanel.add(new JLabel(monkeys));
 		
-		contentPanel.setLayout(new FlowLayout());
-		userName.setLocation(20, 10);
-		userNameField.setLocation(50,10);
-		password.setLocation(20, 25);
-		passWordField.setLocation(50,25);
-		
+		userNamePanel.setLayout(new FlowLayout());
 		contentPane.setLayout(new FlowLayout());
 		
 		contentPane.add(graphicPanel);
-		contentPane.add(contentPanel);
+		contentPane.add(userNamePanel);
+		contentPane.add(passWordPanel);
+		contentPane.add(buttonPanel);
 		
 		userNameField.addActionListener(this);
 		passWordField.addActionListener(this);
@@ -89,13 +86,34 @@ public class Login extends JFrame implements ActionListener {
 		loginButton.addActionListener(this);
 		newAccountButton.addActionListener(this);
 		
-		this.setBounds(0,0,300,700);
+		this.setBounds(0,0,310,600);
 		this.setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent evt){
 		if (evt.getSource() == loginButton){
-			verifyUser(userNameField.getText(), new String(passWordField.getPassword()));
+			int userNumber = verifyUser(userNameField.getText(), 
+					new String(passWordField.getPassword()));
+			if(userNumber >= 0) {
+				loginUser(userNumber);
+				this.remove(graphicPanel);
+				this.remove(userNamePanel);
+				this.remove(passWordPanel);
+				this.remove(buttonPanel);
+				repaint();
+
+				imPanel = new JPanel();
+				logoutButton = new JButton("Log Out");
+				imPanel.add(logoutButton);
+				logoutButton.addActionListener(this);
+				contentPane.add(imPanel);
+				this.setVisible(true);
+				repaint();
+			}
+			else {
+				userNameField.setText("");
+				passWordField.setText("");
+			}
 		}
 		if (evt.getSource() == newAccountButton){
 			try {
@@ -105,13 +123,25 @@ public class Login extends JFrame implements ActionListener {
 				e.printStackTrace();
 			}
 		}
+		if (evt.getSource() == logoutButton){
+			this.remove(imPanel);
+			JOptionPane.showMessageDialog(null, "You Are Logged Out!");
+			contentPane.add(graphicPanel);
+			contentPane.add(userNamePanel);
+			contentPane.add(passWordPanel);
+			contentPane.add(buttonPanel);
+			userNameField.setText("");
+			passWordField.setText("");
+			repaint();
+			this.setVisible(true);
+		}
 	}
 	
 	public static void main(String[] args) throws IOException {
 
 //		createLogin();
 //		int userNumber;
-//		generateAccountCollection();
+		generateAccountCollection();
 //		userNumber = verifyUser();
 //		if (userNumber >= 0) {
 //			loginUser(userNumber);
@@ -125,11 +155,8 @@ public class Login extends JFrame implements ActionListener {
 //			e.printStackTrace();
 //		}
 		Login gui1 = new Login();
-//		gui1.setTitle("QQ");
-//		gui1.setLocationRelativeTo(null);
-//		gui1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		gui1.setSize(300,00);
-//		gui1.setVisible(true);
+		gui1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 	}
 	
 	public static void generateAccountCollection () throws IOException {
@@ -149,26 +176,18 @@ public class Login extends JFrame implements ActionListener {
 		}
 	}
 	public int verifyUser (String userName, String passWord) {
-		boolean loggedIn = false;
 		int userId = -1;
-		for (int i = 0; i < 5; i++) {
 
-			userId = Account.verifyLogIn(userName, passWord);
-			if (userId >= 0) {
-				JOptionPane.showMessageDialog(null, "Correct Login!");
-				loggedIn = true;
-				break;
-			}
-			else {
-				JOptionPane.showMessageDialog(null, "Incorrect Login!");
-			}
-		}
-		if (loggedIn == false) {
-			JOptionPane.showMessageDialog(null, "Failed to Log In!");
-			return -1;
+		//System.out.println("Username: " + userName);
+		//System.out.println("Password: " + passWord);
+		userId = Account.verifyLogIn(userName, passWord);
+		if (userId >= 0) {
+			JOptionPane.showMessageDialog(null, "Correct Login!");
+			return userId;
 		}
 		else {
-			return userId;
+			JOptionPane.showMessageDialog(null, "Incorrect Login!");
+			return -1;
 		}
 	}
 	
