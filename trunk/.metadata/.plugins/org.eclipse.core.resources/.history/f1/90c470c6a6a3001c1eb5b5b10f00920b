@@ -1,0 +1,94 @@
+package edu.psu.ist.login;
+
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.JPanel.*;
+import java.lang.*;
+import java.util.*;
+
+
+
+
+public class LoginGUI extends JFrame implements ActionListener{
+	
+	public Container contentPane;
+	public JPanel graphicPanel, userNamePanel, passWordPanel, buttonPanel;
+	public JLabel userName, password;
+	public JTextField userNameField;
+	protected JPasswordField passWordField;
+	public static JButton loginButton, newAccountButton;
+	public Image monkeys;
+	
+	public LoginGUI(){
+		
+		super("MonkeyMessenger v1.0");
+
+		contentPane = getContentPane();
+		
+		loginButton = new JButton("Log On");
+		newAccountButton = new JButton("Create Acccount");
+		
+		userName = new JLabel("User Name:");
+		password = new JLabel("Password:");
+		
+		userNameField = new JTextField(15);
+		passWordField = new JPasswordField(15);
+		
+		ImageIcon monkeys = new ImageIcon("monkeys.jpg");
+		//File image = new File("monkeys.jpg");
+		//monkeys = ImageIO.read(image);
+		
+		graphicPanel = new JPanel();
+		userNamePanel = new JPanel();
+		passWordPanel = new JPanel();
+		buttonPanel = new JPanel();
+		
+		userNamePanel.add(userName);
+		userNamePanel.add(userNameField);
+		passWordPanel.add(password);
+		passWordPanel.add(passWordField);
+		buttonPanel.add(loginButton);
+		buttonPanel.add(newAccountButton);
+		
+		//monkeys.getScaledInstance(300,300);
+		
+		graphicPanel.add(new JLabel(monkeys));
+		
+		userNamePanel.setLayout(new FlowLayout());
+		contentPane.setLayout(new FlowLayout());
+		
+		contentPane.add(graphicPanel);
+		contentPane.add(userNamePanel);
+		contentPane.add(passWordPanel);
+		contentPane.add(buttonPanel);
+		
+		userNameField.addActionListener(this);
+		passWordField.addActionListener(this);
+		
+		loginButton.addActionListener(this);
+		newAccountButton.addActionListener(this);
+		
+		this.setBounds(0,0,310,600);
+		this.setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent evt){
+		if (evt.getSource() == loginButton){
+			int userNumber = Login.verifyUser(userNameField.getText(), 
+					new String(passWordField.getPassword()));
+			if (userNumber >= 0) {
+				Login.loginUser(userNumber);
+			}
+		if (evt.getSource() == newAccountButton){
+			try {
+				Login.createLogin();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	}
+}
